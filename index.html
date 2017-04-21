@@ -1,0 +1,187 @@
+<!doctype html>
+
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width", initial-scale=1.0">
+    <title> PDF Exploit Toolkit</title>
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <link rel="stylesheet" href="circle.css">
+  </head>
+
+<body>
+
+<div class="no-margin no-padding">
+  <div align="center" class="container-fluid ">
+ <img src="1pdf-grey.png" class="img-responsive">
+  </div>
+</div>
+
+
+<nav  class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-PDF-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">PDF Exploit Toolkit (PET)</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-PDF-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="repo.html">Analysis Report<span class="sr-only">(current)</span></a></li>
+
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Attack Types<b class="caret"></b></a>
+             <ul class="dropdown-menu">
+              <li><a href="msf.html">Metasploit</a></li>
+              <li><a href="jscri.html">Javascript Form</a></li>
+              <li><a href="#">Malicious File</a></li>
+              <li><a href="#">Shellcode</a></li>
+            </ul>
+        </li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Contact</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Help <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">User Guide</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<div class="container-fluid">
+<div class="row">
+    <div class="col-md-6">
+     <div style="background:AntiqueWhite" class="panel panel-default">
+      <div style="background:AntiqueWhite" class="panel-heading">
+       <h4 class="panel-title">Analyse Malicious PDF</h4>
+      </div>
+        <div align="center" class="panel-body">
+          <div align ="center" class="container-fluid">
+
+ <form action="http://192.168.84.137/uploadfc.py" method="post" enctype="multipart/form-data">
+            <input type="file" name="file_1" /> <br>
+            <span class="glyphicon glyphicon-duplicate" aria-hidden="true"></span>
+            <input onClick="move()" value="Upload PDF File" class="btn btn-default" type="submit" /><br>
+            <br>
+            <div class="center c100 p0.1">
+              <span id="label">0%</span>
+               <div  class="slice">
+                 <div  id="bar"></div>
+                 <div class="fill"></div>
+               </div>
+            </div>
+            <br>
+    <script>
+    function move() {
+        var elem = document.getElementById("bar");
+        var width = 10;
+        var id = setInterval(frame, 10);
+        function frame() {
+           if (width >= 100) {
+              clearInterval(id);
+            } else {
+               width++;
+               elem.style.width = width + '%';
+               document.getElementById("label").innerHTML = width * 1  + '%'; 
+            }
+	    
+         }
+        
+        }
+    </script>
+    </form>
+            <div align="center"
+            <li><a href="repo.html">View Results</a></li> <br>
+            <label for="analysis">Please allow for the results to be generated!!</label>
+            </div>
+       </div>
+     </div>
+    </div>
+
+</div>
+    <div class="col-md-6">
+    <div style="background:AntiqueWhite" class="panel panel-default">
+    <div style="background:AntiqueWhite" class="panel-heading">
+         <h4 class="panel-title">Create Malicious PDF</h4>
+         </div>
+        <div class="panel-body">
+          <div align ="center" class="form-group">
+          <label for="InputFile">Create New PDF :</label><br>
+          <form method="get" action="MyDocument.pdf">
+          <span class="glyphicon glyphicon-duplicate" aria-hidden="true"></span>
+          <input value="Create New PDF" class="btn btn-default" type="submit" /><br>
+          </form>
+          </div>
+          <div align ="center" class="form-group" onsubmit="return up();">
+            <label for="InputFile">Upload PDF:</label>
+            <form  action="uploadfce.py" method="post" enctype="multipart/form-data" >
+            <input type="file" name="file_2"><br>
+            <span class="glyphicon glyphicon-duplicate" aria-hidden="true"></span>
+            <input value="Upload PDF File" class="btn btn-default" type="submit" id="btnSubmit"/><br>
+            </form>
+           
+           <script>
+             $(document).ready(function(e){
+                 $('#btnSubmit').click(function(){
+                 $(this).val("File Uploaded");
+                });
+             });
+           </script>
+          </div>
+           <div align ="center" class="form-group">
+            <label for="InputFile">Select File to Embed:</label>
+            <form action="uploadfcs.py" method="post" enctype="multipart/form-data">
+            <input type="file" name="file_3"><br>
+            <span class="glyphicon glyphicon-duplicate" aria-hidden="true"></span>
+            <input value="Upload Malicious Script" class="btn btn-default" type="submit" /><br>
+            </form>
+          </div>
+ 
+         <div align="center" class="form-group">
+           <label for="Select">Select Obfuscation Technique:</label>
+           <select align="center" id="Select" class="form-control">
+           <option>Select</option>
+           <option>None</option>
+           <option>Steganography</option>
+           <option>Ecode</option>
+           <option>Use filters</option>
+           </select>
+        </div>
+      <div  align="center">
+        <form method="get" action="createE/malicious.pdf">
+        <span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>
+        <button type="submit" class="btn btn-default">Create Malicious File</button><br>
+        <label for="analysis">Please allow for the results to be generated!!</label>
+        </form>
+</form>
+</div>
+
+
+  </div>
+</div>
+
+</div>
+</div>
+<hr>
+
+</body>
+
+<script src="jquery.js"></script>
+<script src="bootstrap.min.js"></script>
+<script src="jquery.min.js"></script>
+
+</html>

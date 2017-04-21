@@ -1,0 +1,85 @@
+<!doctype html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>MSF</title>
+        <link href="bootstrap.min.css" rel="stylesheet">
+        <link href="style.css" rel="stylesheet">
+
+    </head>
+
+ <body>
+
+ <nav class="navbar navbar-inverse" role="navigation">
+      <div class="container-fluid">
+
+          <div class="navbar-header">
+             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-MVC-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+           <li><a class="navbar-brand" href="index.html">PDF-Exploit</a></li>
+           </div>
+      </div>
+ </nav>
+
+<div  class="container-fluid">
+<div style="background:AntiqueWhite" class="jumbotron">
+<div  align="center" class="containter-fluid" >
+    <div class="panel-heading">
+       	  <h2>Metasploit Attacks</h2>
+    </div>
+    <div align="center" class="form-group">
+      <label for="Select">Select attack</label>
+      <select id="Select" class="form-control">
+      <option>Select</option>
+      <option>Shadow File Theft</option>
+      <option>Privilege Escalation</option>
+      </select>
+   </div>
+
+   </div>
+     <div class="panel-body">
+     <form method="post" action="uploadmsf.py" enctype="multipart/form-data">
+       <label for="exploit">INSERT EXPLOIT</label>
+       <input type="text" name="exploit" class="form-control" placeholder="Enter exploit">
+       <br>
+       <label for="srvhost">set SRVHOST</label>
+       <input type="text" class="form-control" name="srvhost" placeholder="Enter SRV">
+       <br>
+       <label for="uripath">SET URIPATH</labeL>
+       <input type="text" class="form-control" name="uripath" placeholder="Enter URI">
+       <br>
+       <label for="run"> RUN </label>
+       <br>
+       <input type="text" class="form-control" name="run"  placeholder="RUN">
+       <br>
+       <input type="submit"  class="btn btn-default" value="Attack"/>
+      </form>
+     </div>
+     <div  align="center">
+        <form method="get" action="shadow.txt">
+        <span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>
+        <button type="submit" class="btn btn-default">Get File</button>
+        </form>
+          <label for="fetch">Please allow for the results to be generated!!</label>
+      </div>
+   </div>
+</div>
+
+<div align="center" class="container-fluid">
+  <div align="center" class="container-fluid">
+    <img src="mlogo.png" class="img-responsive">
+  </div>
+</div>
+
+<script src="jquery.js"></script>
+<script src="bootstrap.min.js"></script>
+
+</body>
+
+</html>

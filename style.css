@@ -1,0 +1,113 @@
+.no-margin
+{
+	margin:-30px;
+}
+
+.no-padding
+{
+	padding:0px;
+}
+
+.site-footer
+{
+	background-color: e8e8ee;
+	color: #7e7e7e;
+	margin-top: 30px;
+	padding-top: 30px;
+}
+
+.bottom-footer
+{
+	border-top: 1px solid #7e7e7e;
+	margin-top: 10px;
+	padding-top: 10px;
+	color: #7e7e7e;
+}
+
+.footer-nav
+{
+	text-align: right;
+	list-style: none;
+
+
+}
+
+
+.footer-nav a
+{
+	color: #7e7e7e;
+}
+
+.footer-nav a:hover
+{
+	color: #000000;
+	text-decoration: none;
+}
+
+input {
+    border: 1px solid #808080; /* some kind of blue border */
+
+    /* other CSS styles */
+
+    /* round the corners */
+    -webkit-border-radius: 4px;
+       -moz-border-radius: 4px;
+            border-radius: 4px;
+
+
+    /* make it glow! */
+    -webkit-box-shadow: 0px 0px 4px #808080;
+       -moz-box-shadow: 0px 0px 4px #808080;
+            box-shadow: 0px 0px 4px #808080; /* some variation of blue for the shadow */
+
+}
+
+body{
+    background: grey;
+		margin-left: 250px;
+		margin-right: 250px;
+    border-left: 10px solid #000000;
+    border-right: 10px solid #000000;
+		border-top: 10px solid #000000;
+		border-bottom: 10px solid #000000;
+		padding: 0px;
+}
+
+a:link {
+    color: grey;
+}
+
+.fileUpload {
+    position: relative;
+    overflow: hidden;
+    margin: 10px;
+}
+.fileUpload input.upload {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+
+.fileUpload1 {
+    position: relative;
+    overflow: hidden;
+    margin: 10px;
+}
+.fileUpload1 input.upload {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+

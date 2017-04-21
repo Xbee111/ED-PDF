@@ -1,0 +1,57 @@
+<!doctype html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Report</title>
+        <link href="bootstrap.min.css" rel="stylesheet">
+        <link href="style.css" rel="stylesheet">
+
+    </head>
+
+ <body>
+
+ <nav class="navbar navbar-inverse" role="navigation">
+      <div class="container-fluid">
+
+          <div class="navbar-header">
+             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-MVC-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+           <li><a class="navbar-brand" href="index.html">PDF-Exploit</a></li>
+           </div>
+      </div>
+ </nav>
+
+<div  align="center" class="containter-fluid" >
+
+<h2>Analysis Report</h2>
+  <p><strong>Note:</strong> Click on each panel to view results.</p>
+
+<div class="panel-group" id="accordion">
+<div style="background:AntiqueWhite" class="panel-body">
+    <div class="panel-heading">
+      <h4 class="panel-title"
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+        PDF Information</a>
+      </h4>
+    </div>
+    <div id="collapse1" class="panel-collapse collapse in">
+      <div class="panel-body"><object type="text/html" data="result.html" width="960px" height="600px" style="overflow:auto;border:5px;"></object></div>
+    </div>
+  </div>
+
+  </div>
+</div>
+
+
+<script src="jquery.js"></script>
+<script src="bootstrap.min.js"></script>
+
+</body>
+
+</html>
